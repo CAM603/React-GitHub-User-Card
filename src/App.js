@@ -9,7 +9,8 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      data: {}
+      data: {},
+      followers: []
     }
   }
   componentDidMount() {
@@ -17,16 +18,19 @@ class App extends React.Component {
     .get(`https://api.github.com/users/cam603`)
     .then(res => {
       this.setState({data: res.data})
-    }) 
+      return axios.get(`https://api.github.com/users/cam603/followers`)
+    })
+    .then(res => this.setState({followers: res.data}))
     .catch(err => console.log(err))
   }
   render() {
+    console.log(this.state.followers)
     return (
       <div className="App">
         <User 
         data={this.state.data}
         />
-        <Followers />
+        <Followers followers={this.state.followers}/>
       </div>
     );
   }

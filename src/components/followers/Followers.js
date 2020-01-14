@@ -1,11 +1,16 @@
 import React from 'react';
 import FollowerCard from './FollowerCard';
 
-const Followers = () => {
+const Followers = (props) => {
 
     return (
         <div>
-            Map over Followers and return a <FollowerCard/>
+            {props.followers.map(follower => (
+                <FollowerCard
+                key={follower.id}
+                pic={follower.avatar_url}
+                />
+            ))}
         </div>
     )
 }

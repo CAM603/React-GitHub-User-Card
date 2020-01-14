@@ -1,9 +1,11 @@
 import React from 'react';
 
-const FollowerCard = () => {
+const FollowerCard = (props) => {
 
     return (
-        <div>Follower Card</div>
+        <div>
+            <img style={{height: '150px'}} src={props.pic} alt="follower"/>
+        </div>
     )
 }
 

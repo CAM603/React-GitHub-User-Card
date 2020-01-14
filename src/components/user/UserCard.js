@@ -3,7 +3,7 @@ import React from 'react';
 const UserCard = (props) => {
     console.log(props.data)
     return (
-        <div>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '5px', width: '400px'}}>
             <img style={{height: '150px'}} src={props.data.avatar_url}/>
             <p>Name: {props.data.name} AKA: {props.data.login}</p>
             <p>Bio: {props.data.bio}</p>

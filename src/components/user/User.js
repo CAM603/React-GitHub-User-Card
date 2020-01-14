@@ -9,6 +9,8 @@ const User = (props) => {
         <div style={{width: '100%', border: 'solid black 1px', display: 'flex', justifyContent: 'space-between'}}>
             <UserCard data={props.data}/> 
             <UserChart/>
+            <UserChart/>
+            <UserCard data={props.challenger} />
         </div>
     )
 }

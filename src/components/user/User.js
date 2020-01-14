@@ -11,8 +11,6 @@ const User = (props) => {
             data={props.user}
             color="blue"
             /> 
-            <UserChart/>
-            <UserChart/>
             <UserCard 
             data={props.challenger} 
             color="red"

@@ -4,16 +4,17 @@ export const StyledUser = styled.div`
     border-radius: 5px;
     box-shadow: 10px 10px 5px grey;
     border: solid 15px ${props => props.color};
-    height: 400px;
-    width: 300px;
+    height: 420px;
+    width: 350px;
     background: ${props => props.color};
     background-image: url(${props => props.pic});
     background-size: contain;
     background-repeat: no-repeat;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
+    margin: 10px 0 30px 0;
 
     p:first-child {
         color: white;

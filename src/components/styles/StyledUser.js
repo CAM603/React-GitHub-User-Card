@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const StyledUser = styled.div`
     border-radius: 5px;
     box-shadow: 10px 10px 5px grey;
-    border: solid 10px ${props => props.color};
-    height: 600px;
+    border: solid 15px ${props => props.color};
+    height: 400px;
     width: 300px;
     background: ${props => props.color};
     background-image: url(${props => props.pic});
@@ -16,10 +16,19 @@ export const StyledUser = styled.div`
     justify-content: flex-end;
 
     p:first-child {
-        background: white;
+        color: white;
+        font-size: 2.5rem;
     }
 
     p {
         margin: 0;
+        -webkit-text-stroke: 2px black;
+        text-shadow:
+        3px 3px 0 #000,
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+        font-weight: bold;
     }
 `;

@@ -1,16 +1,12 @@
 import React from 'react';
+import { StyledFollower } from '../styles/StyledFollower';
 
 const FollowerCard = (props) => {
     
     return (
-        <div style={{padding: '2px'}}>
-            <img 
-            style={{height: '100px'}} 
-            src={props.pic} 
-            alt="follower"
-            onClick={() => props.change(props.name)}
-            />
-        </div>
+        <StyledFollower pic={props.pic} onClick={() => props.change(props.name)}>
+            <h5>{props.name}</h5>
+        </StyledFollower>
     )
 }
 

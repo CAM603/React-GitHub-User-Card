@@ -23,6 +23,17 @@ class App extends React.Component {
     .then(res => this.setState({followers: res.data}))
     .catch(err => console.log(err))
   }
+  change = (name) => {
+    axios
+    .get(`https://api.github.com/users/${name}`)
+    .then(res => {
+      this.setState({data: res.data})
+      return axios.get(`https://api.github.com/users/${name}/followers`)
+    })
+    .then(res => this.setState({followers: res.data}))
+    .catch(err => console.log(err))
+  }
+
   render() {
     console.log(this.state.followers)
     return (
@@ -30,7 +41,10 @@ class App extends React.Component {
         <User 
         data={this.state.data}
         />
-        <Followers followers={this.state.followers}/>
+        <Followers 
+        followers={this.state.followers}
+        change={this.change}
+        />
       </div>
     );
   }

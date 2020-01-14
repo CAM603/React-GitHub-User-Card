@@ -9,6 +9,8 @@ const Followers = (props) => {
                 <FollowerCard
                 key={follower.id}
                 pic={follower.avatar_url}
+                name={follower.login}
+                change={props.change}
                 />
             ))}
         </div>

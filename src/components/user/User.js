@@ -7,10 +7,16 @@ const User = (props) => {
 
     return (
         <div className="user-container">
-            <UserCard data={props.user}/> 
+            <UserCard 
+            data={props.user}
+            color="blue"
+            /> 
             <UserChart/>
             <UserChart/>
-            <UserCard data={props.challenger} />
+            <UserCard 
+            data={props.challenger} 
+            color="red"
+            />
         </div>
     )
 }

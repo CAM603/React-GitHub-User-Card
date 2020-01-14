@@ -5,7 +5,9 @@ import { StyledUser } from '../styles/StyledUser'
 const UserCard = (props) => {
     console.log(props.data)
     return (
-        <StyledUser pic={props.data.avatar_url}>
+        <StyledUser 
+        pic={props.data.avatar_url}
+        color={props.color}>
             <p>Name: {props.data.name} AKA: {props.data.login}</p>
             <p>Bio: {props.data.bio}</p>
             <p>Location: {props.data.location}</p>

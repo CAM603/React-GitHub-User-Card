@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const StyledUser = styled.div`
     border-radius: 5px;
     box-shadow: 10px 10px 5px grey;
-    border: solid black 10px;
+    border: solid 10px ${props => props.color};
     height: 600px;
     width: 300px;
-    background: blue;
+    background: ${props => props.color};
     background-image: url(${props => props.pic});
     background-size: contain;
     background-repeat: no-repeat;

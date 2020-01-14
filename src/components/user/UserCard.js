@@ -5,7 +5,7 @@ const UserCard = (props) => {
     return (
         <div>
             <img style={{height: '150px'}} src={props.data.avatar_url}/>
-            <p>Name: {props.data.name}</p>
+            <p>Name: {props.data.name} AKA: {props.data.login}</p>
             <p>Bio: {props.data.bio}</p>
             <p>Location: {props.data.location}</p>
             <p>Joined: {props.data.created_at}</p>

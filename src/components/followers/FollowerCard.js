@@ -5,7 +5,7 @@ const FollowerCard = (props) => {
     return (
         <div>
             <img 
-            style={{height: '150px'}} 
+            style={{height: '100px'}} 
             src={props.pic} 
             alt="follower"
             onClick={() => props.change(props.name)}

@@ -3,7 +3,7 @@ import React from 'react';
 const FollowerCard = (props) => {
     
     return (
-        <div>
+        <div style={{padding: '2px'}}>
             <img 
             style={{height: '100px'}} 
             src={props.pic} 

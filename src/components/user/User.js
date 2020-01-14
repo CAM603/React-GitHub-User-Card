@@ -6,8 +6,8 @@ import UserChart from './UserChart';
 const User = (props) => {
 
     return (
-        <div style={{width: '100%', border: 'solid black 1px', display: 'flex', justifyContent: 'space-between'}}>
-            <UserCard data={props.data}/> 
+        <div className="user-container">
+            <UserCard data={props.user}/> 
             <UserChart/>
             <UserChart/>
             <UserCard data={props.challenger} />

@@ -4,7 +4,7 @@ import FollowerCard from './FollowerCard';
 const Followers = (props) => {
 
     return (
-        <div style={{width: '100%', border: 'solid black 1px', display: 'flex', flexFlow: 'row wrap', justifyContent: 'center'}}>
+        <div className="followers-container">
             {props.followers.map(follower => (
                 <FollowerCard
                 key={follower.id}

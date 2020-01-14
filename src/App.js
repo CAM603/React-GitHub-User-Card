@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      data: {},
+      user: {},
       followers: [],
       challenger: {}
     }
@@ -18,10 +18,10 @@ class App extends React.Component {
     axios
     .get(`https://api.github.com/users/cam603`)
     .then(res => {
-      this.setState({data: res.data})
+      this.setState({user: res.data, challenger: res.data})
       return axios.get(`https://api.github.com/users/cam603/followers`)
     })
-    .then(res => this.setState({followers: res.data , challenger: res.data[0]}))
+    .then(res => this.setState({followers: res.data}))
     .catch(err => console.log(err))
   }
   change = (name) => {
@@ -34,16 +34,16 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.followers)
+    console.log('challenger', this.state.followers)
     return (
       <div className="App">
-        <User 
-        data={this.state.data}
-        challenger={this.state.challenger}
-        />
         <Followers 
         followers={this.state.followers}
         change={this.change}
+        />
+        <User 
+        user={this.state.user}
+        challenger={this.state.challenger}
         />
       </div>
     );

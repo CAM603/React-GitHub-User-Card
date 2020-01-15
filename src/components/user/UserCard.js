@@ -17,6 +17,7 @@ const UserCard = (props) => {
                 <p>Followers: {props.data.followers}</p>
                 <p>Following: {props.data.following}</p>
                 <p>Public Repositories: {props.data.public_repos}</p> */}
+                <p>{props.player}</p>
             </StyledUser>
             <UserChart name={props.data.login}/>
         </div>

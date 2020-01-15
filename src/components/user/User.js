@@ -1,7 +1,6 @@
 import React from 'react';
 import UserCard from './UserCard';
-import UserChart from './UserChart';
-
+import Fight from '../../containers/Fight';
 
 const User = (props) => {
 
@@ -10,10 +9,12 @@ const User = (props) => {
             <UserCard 
             data={props.user}
             color="blue"
-            /> 
+            player="P1"
+            />
             <UserCard 
             data={props.challenger} 
             color="red"
+            player="P2"
             />
         </div>
     )

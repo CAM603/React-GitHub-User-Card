@@ -22,4 +22,8 @@ export const StyledFollower = styled.div`
         -1px 1px 0 #000,
         1px 1px 0 #000;
     }
+
+    &:hover {
+        filter: brightness(1.50);
+    }
 `;

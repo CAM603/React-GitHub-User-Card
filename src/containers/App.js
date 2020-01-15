@@ -2,8 +2,10 @@ import React from 'react';
 import axios from 'axios';
 
 import './App.css';
-import User from './components/user/User';
-import Followers from './components/followers/Followers';
+import User from '../components/user/User';
+import Followers from '../components/followers/Followers';
+import Fight from './Fight';
+import Navigation from './Navigation';
 
 class App extends React.Component {
   constructor(){
@@ -32,14 +34,31 @@ class App extends React.Component {
     })
     .catch(err => console.log(err))
   }
+  changeP1 = (name) => {
+    axios
+    .get(`https://api.github.com/users/${name}`)
+    .then(res => {
+      this.setState({user: res.data})
+      return axios.get(`https://api.github.com/users/${name}/followers`)
+    })
+    .then(res => this.setState({followers: res.data}))
+    .catch(err => console.log(err))
+  }
 
   render() {
     console.log('challenger', this.state.followers)
     return (
       <div className="App">
+        <Navigation 
+        changeP1={this.changeP1}
+        />
         <Followers 
         followers={this.state.followers}
         change={this.change}
+        />
+        <Fight
+        user={this.state.user}
+        challenger={this.state.challenger}
         />
         <User 
         user={this.state.user}

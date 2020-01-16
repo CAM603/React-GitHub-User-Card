@@ -46,7 +46,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('challenger', this.state.followers)
     return (
       <div className="App">
         <Navigation 

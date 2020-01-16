@@ -1,4 +1,6 @@
 import React from 'react';
+import { StyledFight } from '../components/styles/StyledFight';
+import { StyledButton } from '../components/styles/StyledButton';
 
 class Fight extends React.Component {
     constructor(props) {
@@ -17,12 +19,12 @@ class Fight extends React.Component {
 
         if (this.state.fight) {
             battle = (
-                <div>
+                <StyledFight>
                     <table>
                         <tr>
                             <th>Stat</th>
-                            <th>P1</th>
-                            <th>P2</th>
+                            <th>{userName}</th>
+                            <th>{challengerName}</th>
                             <th>Winner</th>
                         </tr>
                         <tr>
@@ -33,14 +35,18 @@ class Fight extends React.Component {
                         </tr>
                         
                     </table>
-                </div>
+                </StyledFight>
             )
         }
         
         return (
-            <div style={{width: '100%', zIndex: '1', position: 'absolute', top: '68%', background: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <div className="fight">
                 {battle}
-                <button onClick={() => this.setState({fight: !this.state.fight})}>Fight!</button>
+                <StyledButton 
+                onClick={() => this.setState({fight: !this.state.fight})}
+                fight={this.state.fight}
+                >{this.state.fight ? 'Hide' : 'Fight!'}
+                </StyledButton>
             </div>
         )
     }

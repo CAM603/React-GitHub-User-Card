@@ -1,6 +1,6 @@
 import React from 'react';
 import UserCard from './UserCard';
-import Fight from '../../containers/Fight';
+
 
 const User = (props) => {
 

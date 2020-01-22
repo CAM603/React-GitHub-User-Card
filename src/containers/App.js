@@ -4,7 +4,6 @@ import axios from 'axios';
 import './App.css';
 import User from '../components/user/User';
 import Followers from '../components/followers/Followers';
-import Fight from './Fight';
 import Navigation from './Navigation';
 
 class App extends React.Component {
@@ -13,9 +12,11 @@ class App extends React.Component {
     this.state = {
       user: {},
       followers: [],
-      challenger: {}
+      challenger: {},
+      fighting: true
     }
   }
+
   componentDidMount() {
     axios
     .get(`https://api.github.com/users/cam603`)
@@ -26,6 +27,7 @@ class App extends React.Component {
     .then(res => this.setState({followers: res.data}))
     .catch(err => console.log(err))
   }
+
   change = (name) => {
     axios
     .get(`https://api.github.com/users/${name}`)
@@ -34,6 +36,7 @@ class App extends React.Component {
     })
     .catch(err => console.log(err))
   }
+  
   changeP1 = (name) => {
     axios
     .get(`https://api.github.com/users/${name}`)
@@ -54,10 +57,9 @@ class App extends React.Component {
         <Followers 
         followers={this.state.followers}
         change={this.change}
-        />
-        <Fight
         user={this.state.user}
         challenger={this.state.challenger}
+        fighting={this.state.fighting}
         />
         <User 
         user={this.state.user}

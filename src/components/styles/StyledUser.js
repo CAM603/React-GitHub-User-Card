@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledUser = styled.div`
     border-radius: 5px;
-    box-shadow: 10px 10px 5px grey;
+    // box-shadow: 10px 10px 5px grey;
     border: solid 15px ${props => props.color};
     height: 420px;
     width: 350px;

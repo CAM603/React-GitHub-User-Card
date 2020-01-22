@@ -1,5 +1,6 @@
 import React from 'react';
 import UserCard from './UserCard';
+import { StyledButton } from '../styles/StyledButton';
 
 
 const User = (props) => {
@@ -11,6 +12,9 @@ const User = (props) => {
             color="blue"
             player="P1"
             />
+            <StyledButton 
+            onClick={() => props.toggleFight()}
+            fighting={props.fighting}>Fight</StyledButton>
             <UserCard 
             data={props.challenger} 
             color="red"

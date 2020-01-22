@@ -13,7 +13,7 @@ class App extends React.Component {
       user: {},
       followers: [],
       challenger: {},
-      fighting: true
+      fighting: false
     }
   }
 
@@ -36,7 +36,7 @@ class App extends React.Component {
     })
     .catch(err => console.log(err))
   }
-  
+
   changeP1 = (name) => {
     axios
     .get(`https://api.github.com/users/${name}`)
@@ -46,6 +46,10 @@ class App extends React.Component {
     })
     .then(res => this.setState({followers: res.data}))
     .catch(err => console.log(err))
+  }
+
+  toggleFight = () => {
+    this.setState({fighting: !this.state.fighting})
   }
 
   render() {
@@ -64,6 +68,7 @@ class App extends React.Component {
         <User 
         user={this.state.user}
         challenger={this.state.challenger}
+        toggleFight={this.toggleFight}
         />
       </div>
     );

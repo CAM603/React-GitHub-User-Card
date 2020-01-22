@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledFight } from '../components/styles/StyledFight';
+import UserChart from '../components/user/UserChart';
 
 class Fight extends React.Component {
     constructor(props) {
@@ -29,6 +30,12 @@ class Fight extends React.Component {
                         </tr>
                     </table>
                 </StyledFight>
+                <div>
+                    <p>Player 1</p>
+                    <UserChart login={userName}/>
+                    <p>Player 2</p>
+                    <UserChart login={challengerName}/>
+                </div>
             </div>
         )
     }

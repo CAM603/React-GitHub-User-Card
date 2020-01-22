@@ -1,11 +1,11 @@
 import React from 'react';
 
-const UserChart = (props) => {
+const UserChart = ({login}) => {
 
     return (
             <img className="chart" 
-            src={`http://ghchart.rshah.org/${props.name}`} 
-            alt={`${props.name} GitHub chart`}/>
+            src={`http://ghchart.rshah.org/${login}`} 
+            alt={`${login} GitHub chart`}/>
     
     )
 }

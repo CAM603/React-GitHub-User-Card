@@ -1,10 +1,9 @@
 import React from 'react';
-import UserChart from './UserChart';
 
 import { StyledUser } from '../styles/StyledUser'
 
 const UserCard = (props) => {
-    console.log(props.data)
+    
     return (
         <div className="user-card-container">
             <StyledUser 
@@ -19,7 +18,6 @@ const UserCard = (props) => {
                 <p>Public Repositories: {props.data.public_repos}</p> */}
                 <p>{props.player}</p>
             </StyledUser>
-            <UserChart name={props.data.login}/>
         </div>
     )
 }

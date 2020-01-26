@@ -31,9 +31,9 @@ class Fight extends React.Component {
                     </table>
                 </StyledFight>
                 <div>
-                    <p>Player 1</p>
+                    <h3>Player 1</h3>
                     <UserChart login={userName}/>
-                    <p>Player 2</p>
+                    <h3>Player 2</h3>
                     <UserChart login={challengerName}/>
                 </div>
             </div>

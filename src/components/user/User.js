@@ -14,7 +14,9 @@ const User = (props) => {
             />
             <StyledButton 
             onClick={() => props.toggleFight()}
-            fighting={props.fighting}>Fight</StyledButton>
+            fighting={props.fighting}>
+                {props.fighting ? 'End Fight' : 'Fight!'}
+            </StyledButton>
             <UserCard 
             data={props.challenger} 
             color="red"

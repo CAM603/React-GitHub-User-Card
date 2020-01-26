@@ -69,6 +69,7 @@ class App extends React.Component {
         user={this.state.user}
         challenger={this.state.challenger}
         toggleFight={this.toggleFight}
+        fighting={this.state.fighting}
         />
       </div>
     );

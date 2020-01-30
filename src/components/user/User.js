@@ -19,11 +19,6 @@ const User = (props) => {
             fighting={props.fighting}>
                 {props.fighting ? 'End Fight' : 'Fight!'}
             </StyledButton>
-            <StyledButton 
-            onClick={() => props.endGame()}
-            fighting={props.fighting}>
-                End Game
-            </StyledButton>
             {props.challenger ?
                 <UserCard 
                 data={props.challenger} 

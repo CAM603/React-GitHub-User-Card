@@ -1,10 +1,10 @@
 import React from 'react';
 
-const UserChart = ({login}) => {
+const UserChart = ({login, chart}) => {
 
     return (
             <img className="chart" 
-            src={`http://ghchart.rshah.org/${login}`} 
+            src={chart} 
             alt={`${login} GitHub chart`}/>
     
     )

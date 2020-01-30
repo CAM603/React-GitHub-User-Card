@@ -32,9 +32,15 @@ class Fight extends React.Component {
                 </StyledFight>
                 <div>
                     <h3>Player 1</h3>
-                    <UserChart login={this.userName}/>
+                    <UserChart 
+                    login={this.userName}
+                    chart={this.props.userChart}
+                    />
                     <h3>Player 2</h3>
-                    <UserChart login={this.challengerName}/>
+                    <UserChart 
+                    login={this.challengerName}
+                    chart={this.props.challengerChart}
+                    />
                 </div>
             </div>
         )

@@ -6,7 +6,14 @@ const Followers = (props) => {
 
     return (
         <div className="followers-container">
-            {props.fighting ? <Fight user={props.user} challenger={props.challenger}/> :
+            {props.fighting ? 
+            <Fight 
+            user={props.user} 
+            challenger={props.challenger}
+            userChart={props.userChart}
+            challengerChart={props.challengerChart}
+            /> 
+            :
             props.followers.map(follower => (
                 <FollowerCard
                 key={follower.id}

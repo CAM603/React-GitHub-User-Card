@@ -15,7 +15,9 @@ class App extends React.Component {
       challenger: null,
       startGame: false,
       fighting: false,
-      loading: false
+      loading: false,
+      userChart: '',
+      challengerChart: ''
     }
   }
   
@@ -24,7 +26,10 @@ class App extends React.Component {
     axios
     .get(`https://api.github.com/users/${name}`)
     .then(res => {
-      this.setState({user: res.data})
+      this.setState({
+        user: res.data,
+        userChart: `http://ghchart.rshah.org/${res.data.login}`
+      })
       return axios.get(`https://api.github.com/users/${name}/followers`)
     })
     .then(res => {
@@ -37,7 +42,10 @@ class App extends React.Component {
     axios
     .get(`https://api.github.com/users/${name}`)
     .then(res => {
-      this.setState({challenger: res.data})
+      this.setState({
+        challenger: res.data,
+        challengerChart: `http://ghchart.rshah.org/${res.data.login}`
+      })
     })
     .catch(err => console.log(err))
   }
@@ -54,12 +62,16 @@ class App extends React.Component {
   }
 
   render() {
+    
     let display;
 
     if(this.state.startGame) {
       display = 
         <>
-          <Followers 
+          <div style={{backgroundColor: "black", width: '100%', display: "flex", justifyContent: 'flex-end'}}>{this.state.startGame ? <button onClick={this.endGame}>End Game</button> : null}</div>
+          <Followers
+          userChart={this.state.userChart}
+          challengerChart={this.state.challengerChart}
           followers={this.state.followers}
           change={this.change}
           user={this.state.user}

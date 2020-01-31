@@ -6,11 +6,11 @@ class Fight extends React.Component {
     constructor(props) {
         super(props)
     }
+    userName = this.props.user.login;
+    challengerName = this.props.challenger.login
+    userRepos = this.props.user.public_repos;
+    challengerRepos = this.props.challenger.public_repos;
     render() {
-        let userName = this.props.user.login;
-        let challengerName = this.props.challenger.login
-        let userRepos = this.props.user.public_repos;
-        let challengerRepos = this.props.challenger.public_repos;
         
         return (
             <div className="fight">
@@ -18,23 +18,29 @@ class Fight extends React.Component {
                     <table>
                         <tr>
                             <th>Stat</th>
-                            <th>{userName}</th>
-                            <th>{challengerName}</th>
+                            <th>{this.userName}</th>
+                            <th>{this.challengerName}</th>
                             <th>Winner</th>
                         </tr>
                         <tr>
                             <td>Repos</td>
-                            <td>{userRepos}</td>
-                            <td>{challengerRepos}</td>
-                            <td>{userRepos > challengerRepos ? userName : challengerName}</td>
+                            <td>{this.userRepos}</td>
+                            <td>{this.challengerRepos}</td>
+                            <td>{this.userRepos > this.challengerRepos ? this.userName : this.challengerName}</td>
                         </tr>
                     </table>
                 </StyledFight>
                 <div>
                     <h3>Player 1</h3>
-                    <UserChart login={userName}/>
+                    <UserChart 
+                    login={this.userName}
+                    chart={this.props.userChart}
+                    />
                     <h3>Player 2</h3>
-                    <UserChart login={challengerName}/>
+                    <UserChart 
+                    login={this.challengerName}
+                    chart={this.props.challengerChart}
+                    />
                 </div>
             </div>
         )

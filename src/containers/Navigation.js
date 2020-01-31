@@ -12,14 +12,14 @@ class Navigation extends React.Component {
     }
     handleSubmit = e => {
         e.preventDefault();
-        this.props.changeP1(this.state.name);
+        this.props.startGame(this.state.name);
         this.setState({name: ''})
     }
     render() {
         return (
             <div style={{width: '100%', background: 'white'}}>
                 <form onSubmit={this.handleSubmit}>
-                    <lable>Choose Player 1</lable>
+                    <label>Choose Player 1</label>
                     <input
                     type='text'
                     value={this.state.name}
